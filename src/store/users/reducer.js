@@ -1,30 +1,28 @@
-import { UserTypes, UserState } from "./types";
+import { UserTypes, UserState } from './types';
 
-const userReducer = (state = UserState, action) => {
-  switch (action.type) {
+const userReducer = (state = UserState, {type, payload}) => {
+  switch (type) {
     case UserTypes.USER_REQUEST:
       return {
         ...state,
-        users: state.users,
         userRequest: true,
         userSuccess: false,
-        userFailure: false
+        userFailure: false,
       };
     case UserTypes.USER_SUCCESS:
       return {
         ...state,
-        users: action.payload,
+        users: payload,
         userRequest: false,
         userSuccess: true,
-        userFailure: false
+        userFailure: false,
       };
     case UserTypes.USER_FAILURE:
       return {
         ...state,
-        users: state.users,
         userRequest: true,
         userSuccess: false,
-        userFailure: true
+        userFailure: true,
       };
     default:
       return { ...state };
