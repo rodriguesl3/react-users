@@ -1,30 +1,6 @@
-export const UserAPIInitial = {
-  id: 0,
-  name: "",
-  username: "",
-  email: "z",
-  address: {
-    street: "",
-    suite: "",
-    city: "",
-    zipcode: "",
-    geo: {
-      lat: "",
-      lng: ""
-    }
-  },
-  phone: "",
-  website: "",
-  company: {
-    name: "",
-    catchPhrase: "",
-    bs: ""
-  }
-};
-
 export const UserState = {
   users:[],
-  userRequest: true,
+  userRequest: false,
   userSuccess: false,
   userFailure: false
 }
