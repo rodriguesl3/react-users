@@ -27,7 +27,9 @@ const userReducer = (state = UserState, { type, payload }) => {
     case UserTypes.USER_FILTER:
       let userFiltered = [];
       if (state.users && state.users.length > 0)
-        userFiltered = state.users.filter(user => user.name.includes(payload));
+        userFiltered = state.users.filter(user =>
+          user.name.toLowerCase().includes(payload.toLowerCase()),
+        );
 
       return {
         ...state,
