@@ -7,6 +7,11 @@ It is a simple web page where make a request to https://jsonplaceholder.typicode
 - list users
 - filter users
 
+## Development Feature:
+
+- git hooks (pre commit file)
+- commit lint
+
 ## Introduction
 
 This project was developed using:
