@@ -1,6 +1,6 @@
 import { UserTypes, UserState } from './types';
 
-const userReducer = (state = UserState, {type, payload}) => {
+const userReducer = (state = UserState, { type, payload }) => {
   switch (type) {
     case UserTypes.USER_REQUEST:
       return {
@@ -23,6 +23,15 @@ const userReducer = (state = UserState, {type, payload}) => {
         userRequest: true,
         userSuccess: false,
         userFailure: true,
+      };
+    case UserTypes.USER_FILTER:
+      let userFiltered = [];
+      if (state.users && state.users.length > 0)
+        userFiltered = state.users.filter(user => user.name.includes(payload));
+
+      return {
+        ...state,
+        userFiltered: [...userFiltered],
       };
     default:
       return { ...state };
