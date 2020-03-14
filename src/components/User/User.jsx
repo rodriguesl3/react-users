@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaArrowDown } from 'react-icons/fa';
 
 import { UserCard, Divider } from './User.style';
 
@@ -29,6 +30,8 @@ const User = ({ user }) => {
         <h2>Company</h2>
         <div>{user.company.name}</div>
         <Divider />
+        <small>View More...</small>
+        <FaArrowDown />
         {showCatchPhrase && user.company.catchPhrase}
       </div>
     </UserCard>
